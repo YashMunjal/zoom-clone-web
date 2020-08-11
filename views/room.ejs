@@ -8,6 +8,7 @@
     <script>
         const ROOM_ID="<%=  roomId %>"
         console.log(ROOM_ID);
+        
     </script>
     <script src="/socket.io/socket.io.js" defer></script>
     <script src="script.js" defer></script>
@@ -25,5 +26,8 @@
 </head>
 <body>
     <div id="video-grid"></div>
+    <button class="mute">Mute button</button>
+    <button class="desc">Desc</button>
+    <button class="video-hide">Video Hide</button>
 </body>
 </html>

@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MeetByYash</title>
-</head>
-<body>
-    <h1>Welcome to Meet By Yash</h1>
-    <a href="/r"><button class="new-room">New Room</button></a>
-</body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <div class="foreground">
+      <h1>Welcome to Meet By Yash</h1>
+      <a href="/r"><button class="new-room">New Room</button></a>
+    </div>
+    <img src="img/cover.svg" />
+  </body>
+  <script src="particle.js"></script>
+  <script>
+    particlesJS.load("particles-js", "particles.json", function () {
+      console.log("callback - particles.js config loaded");
+    });
+  </script>
 </html>

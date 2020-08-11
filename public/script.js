@@ -4,13 +4,18 @@ const myPeer = new Peer(undefined, {
   host:'peerjs-server.herokuapp.com' || '/', secure:true, port:443
 })
 const myVideo = document.createElement('video')
-myVideo.muted = true
-const peers = {}
+window.onload=function(){
+  myVideo.muted=true;
+}
+//myVideo.muted = true
+const peers = {};
+var myStream;
 navigator.mediaDevices.getUserMedia({
   video: true,
   audio: true
 }).then(stream => {
-  addVideoStream(myVideo, stream)
+  myStream=stream;
+  addVideoStream(myVideo, stream) 
 
   myPeer.on('call', call => {
     call.answer(stream)
@@ -53,3 +58,21 @@ function addVideoStream(video, stream) {
   })
   videoGrid.append(video)
 }
+
+//UI script
+document.querySelector('.desc').addEventListener('click',()=>{
+  console.log(myStream.getTracks());  
+})
+
+
+var muteBtn=document.querySelector('.mute');
+var hideBtn=document.querySelector('.video-hide');
+
+hideBtn.addEventListener('click',()=>{
+  myStream.getTracks()[1].enabled=!myStream.getTracks()[1].enabled
+});
+muteBtn.addEventListener('click',()=>{
+  myStream.getTracks()[0].enabled=!myStream.getTracks()[0].enabled
+})
+
+//particle.js

@@ -1,0 +1,60 @@
+
+:root{
+    --red-main:#ff5b5b;
+    --red-btn:#d45252;
+}
+body {
+  background-color: rgb(22, 22, 22);
+  overflow: hidden;
+}
+.foreground{
+    margin:10vw;
+    display:flex;
+}
+img{
+    position:absolute;
+    top:150px;
+    height:50vh;
+    width:60vw;
+    right:-10vw;
+}
+h1 {
+  color: var(--red-main);
+  font-family: "Lobster", cursive;
+  font-weight: 200;
+  font-size: 3em;
+  position:absolute;
+  top:20vh;
+}
+.new-room{
+    position:absolute;
+    font-size: 1.4em;
+    top:45vh;
+    border:0;
+    width:220px;
+    height:40px;
+    color:rgb(222, 222, 222);
+    background-color:var(--red-btn);
+    border-radius:8px;
+}
+@media(max-width:1000px){
+    img{
+        height:30vh;
+        width:30vw;
+        right:0
+    }
+}
+@media(max-width:580px){
+    img{
+        display: none;
+    }
+}
+/* ---- Particle JS  ---*/
+#particle-js {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: -12;
+  top: 0;
+  left: 0;
+}
