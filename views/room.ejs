@@ -10,17 +10,45 @@
       defer
     ></script>
     <script>
+
+
       const ROOM_ID = "<%=  roomId %>";
+        console.log("loaded");
+
+
+        //alert(ROOM_ID);
+
       console.log(ROOM_ID);
+
+
     </script>
     <script src="/socket.io/socket.io.js" defer></script>
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="row" id="video-grid" ></div>
+    <!---modal-->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1>Welcome User</h1>
+        <p>Your unique room Id is <%=  roomId %></p>
+        <p>or</p>
+        <p>You can share this url: yashkameet.herkoapp.com/<%=  roomId %></p>
+        <p></p>
+      </div>
+    
+    </div>
+
+    <div class="row" id="video-grid"></div>
     <div class="button-footer">
-      <button class="mute"><img class="audio_image mic_off" src="img/mic_off.svg" /></button>
-      <button class="video-hide"><img class="video_image vid_off" src="img/vid_off.svg"></button>
+      <button class="mute">
+        <img class="audio_image mic_off" src="img/mic_off.svg" />
+      </button>
+      <button class="video-hide">
+        <img class="video_image vid_off" src="img/vid_off.svg" />
+      </button>
     </div>
   </body>
 </html>
