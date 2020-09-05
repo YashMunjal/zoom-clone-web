@@ -62,18 +62,23 @@ function addVideoStream(video, stream) {
   video.addEventListener("loadedmetadata", () => {
     video.play();
   });
- // console.log(video);
-  
-  video.className='column';
-      
-   videoGrid.append(video);
-  
+  // console.log(video);
+
+  video.className = "column";
+
+  videoGrid.append(video);
 }
 
 //UI script
 
 var muteBtn = document.querySelector(".mute");
 var hideBtn = document.querySelector(".video-hide");
+var audio_image = document.querySelector(".audio_image");
+var video_image = document.querySelector(".video_image");
+
+//flags
+var audio_flags = 0;
+var video_flags = 0;
 
 hideBtn.addEventListener("click", () => {
   videoController();
@@ -83,8 +88,44 @@ muteBtn.addEventListener("click", () => {
 });
 
 function videoController() {
+  if (video_image.className === "video_image vid_off" && audio_flags > 0) {
+    video_image.className = "video_image vid_on";
+    video_image.src = "img/vid_on.svg";
+  } else if (
+    video_image.className === "video_image vid_on" &&
+    audio_flags > 0
+  ) {
+    video_image.className = "video_image vid_off";
+    hideBtn.style.backgroundColor = "red";
+
+    video_image.src = "img/vid_off.svg";
+  }
+  if (video_image.className === "video_image vid_off") {
+    hideBtn.style.backgroundColor = "red";
+  } else if (video_image.className === "video_image vid_on") {
+    hideBtn.style.backgroundColor = "white";
+  }
+  video_flags++;
+
   myStream.getTracks()[1].enabled = !myStream.getTracks()[1].enabled;
 }
 function audioController() {
+  if (audio_image.className === "audio_image mic_off" && audio_flags > 0) {
+    audio_image.className = "audio_image mic_on";
+    audio_image.src = "img/mic_on.svg";
+  } else if (
+    audio_image.className === "audio_image mic_on" &&
+    audio_flags > 0
+  ) {
+    audio_image.className = "audio_image mic_off";
+    muteBtn.style.backgroundColor = "red";
+    audio_image.src = "img/mic_off.svg";
+  }
+  if (audio_image.className === "audio_image mic_off") {
+    muteBtn.style.backgroundColor = "red";
+  } else if (audio_image.className === "audio_image mic_on") {
+    muteBtn.style.backgroundColor = "white";
+  }
+  audio_flags++;
   myStream.getTracks()[0].enabled = !myStream.getTracks()[0].enabled;
 }
