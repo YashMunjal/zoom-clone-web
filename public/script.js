@@ -62,7 +62,12 @@ function addVideoStream(video, stream) {
   video.addEventListener("loadedmetadata", () => {
     video.play();
   });
-  videoGrid.append(video);
+ // console.log(video);
+  
+  video.className='column';
+      
+   videoGrid.append(video);
+  
 }
 
 //UI script
