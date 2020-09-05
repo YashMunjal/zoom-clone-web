@@ -5,13 +5,13 @@ For Live demo visit https://yashkameet.herokuapp.com
 
 ## Project Checklist
 
-[X] Create Rooms with functioning Room IDs
-[X] Homepage UI
-[X] Rooms video cards made responsive
-[X] Hiding/showing Audio and video
-[ ]  Showing Room id as an alert for new users
-[X] Correctinhg the buttons UI
-[ ] Accepting names and creating a session for a specified user
+- [x] Create Rooms with functioning Room IDs
+- [x] Homepage UI
+- [x] Rooms video cards made responsive
+- [x] Hiding/showing Audio and video
+- [ ]  Showing Room id as an alert for new users
+- [x] Correctinhg the buttons UI
+- [ ] Accepting names and creating a session for a specified user
 
 #### Long term Plan
 
