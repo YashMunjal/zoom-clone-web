@@ -88,52 +88,16 @@ muteBtn.addEventListener("click", () => {
 });
 
 function videoController() {
-  if (video_image.className === "video_image vid_off" && audio_flags > 0) {
-    video_image.className = "video_image vid_on";
-    video_image.src = "img/vid_on.svg";
-  } else if (
-    video_image.className === "video_image vid_on" &&
-    audio_flags > 0
-  ) {
-    video_image.className = "video_image vid_off";
-    hideBtn.style.backgroundColor = "red";
-
-    video_image.src = "img/vid_off.svg";
-  }
-  if (video_image.className === "video_image vid_off") {
-    hideBtn.style.backgroundColor = "red";
-  } else if (video_image.className === "video_image vid_on") {
-    hideBtn.style.backgroundColor = "white";
-  }
-  video_flags++;
-
   myStream.getTracks()[1].enabled = !myStream.getTracks()[1].enabled;
 }
 function audioController() {
-  if (audio_image.className === "audio_image mic_off" && audio_flags > 0) {
-    audio_image.className = "audio_image mic_on";
-    audio_image.src = "img/mic_on.svg";
-  } else if (
-    audio_image.className === "audio_image mic_on" &&
-    audio_flags > 0
-  ) {
-    audio_image.className = "audio_image mic_off";
-    muteBtn.style.backgroundColor = "red";
-    audio_image.src = "img/mic_off.svg";
-  }
-  if (audio_image.className === "audio_image mic_off") {
-    muteBtn.style.backgroundColor = "red";
-  } else if (audio_image.className === "audio_image mic_on") {
-    muteBtn.style.backgroundColor = "white";
-  }
-  audio_flags++;
   myStream.getTracks()[0].enabled = !myStream.getTracks()[0].enabled;
 }
 
 
 //modal
 
-var modal = document.getElementById("myModal");
+/*var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
@@ -148,4 +112,4 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}
+}*/
